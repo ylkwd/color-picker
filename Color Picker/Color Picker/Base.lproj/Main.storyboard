@@ -18,26 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFZ-hg-EKA">
-                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6e-GK-ZHm">
-                                <rect key="frame" x="166" y="390" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svU-ev-c2u">
+                                <rect key="frame" x="163.5" y="387" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0k0-bD-5EQ">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vUB-68-qf7"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8yd-md-6Ns"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TFZ-hg-EKA" firstAttribute="top" secondItem="S6e-GK-ZHm" secondAttribute="bottom" constant="40" id="JBw-qP-dMG"/>
-                            <constraint firstItem="TFZ-hg-EKA" firstAttribute="trailing" secondItem="St9-W3-yei" secondAttribute="trailing" id="c3l-tt-DnH"/>
-                            <constraint firstItem="St9-W3-yei" firstAttribute="bottom" secondItem="TFZ-hg-EKA" secondAttribute="bottom" id="fql-Kl-2MS"/>
-                            <constraint firstItem="TFZ-hg-EKA" firstAttribute="leading" secondItem="St9-W3-yei" secondAttribute="leading" id="l2q-DX-Iaq"/>
-                            <constraint firstItem="S6e-GK-ZHm" firstAttribute="centerX" secondItem="St9-W3-yei" secondAttribute="centerX" id="uyd-Yr-cTw"/>
+                            <constraint firstItem="svU-ev-c2u" firstAttribute="centerX" secondItem="St9-W3-yei" secondAttribute="centerX" id="80v-2S-UY7"/>
+                            <constraint firstItem="0k0-bD-5EQ" firstAttribute="trailing" secondItem="St9-W3-yei" secondAttribute="trailing" id="FcV-fb-BXe"/>
+                            <constraint firstItem="0k0-bD-5EQ" firstAttribute="leading" secondItem="St9-W3-yei" secondAttribute="leading" id="Tuz-aL-ed0"/>
+                            <constraint firstItem="St9-W3-yei" firstAttribute="bottom" secondItem="0k0-bD-5EQ" secondAttribute="bottom" id="U4v-t6-qsW"/>
+                            <constraint firstItem="0k0-bD-5EQ" firstAttribute="bottom" secondItem="St9-W3-yei" secondAttribute="bottom" id="hTq-WG-NqD"/>
+                            <constraint firstItem="0k0-bD-5EQ" firstAttribute="top" secondItem="svU-ev-c2u" secondAttribute="bottom" constant="40" id="rrU-61-dgX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="St9-W3-yei"/>
                     </view>
+                    <connections>
+                        <outlet property="ColorPickView" destination="0k0-bD-5EQ" id="Q4n-Jd-ssW"/>
+                        <outlet property="label" destination="svU-ev-c2u" id="u7N-15-2Xw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
