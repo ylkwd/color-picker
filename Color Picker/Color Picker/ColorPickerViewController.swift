@@ -9,26 +9,30 @@
 import UIKit
 
 class ColorPickerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    //Initial the first color Red
     let ColorIni = 0
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var ColorPickView: UIPickerView!
     
     let colors: [(UIColor, String)] = [(.red, "Red"), (.orange, "Orange"), (.yellow, "Yellow"), (.green, "Green"), (.blue, "Blue"), (.purple, "Purple")]
-
+    
+    //Number of picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    //Shows Piker Choices
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return colors[row].1
     }
     
+    //Shows number of Choices
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return colors.count
     }
     
+    //Change label text and background color
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         label.text = colors[row].1
         self.view.backgroundColor = colors[row].0
@@ -37,6 +41,8 @@ class ColorPickerViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Initial the background color and label text
         label.text = colors[ColorIni].1
         self.view.backgroundColor = colors[ColorIni].0
         // Do any additional setup after loading the view.
